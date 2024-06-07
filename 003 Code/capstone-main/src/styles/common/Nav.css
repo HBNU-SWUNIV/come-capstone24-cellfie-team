@@ -1,0 +1,30 @@
+nav {
+  display: flex;
+  position: fixed;
+  top: 0;
+  background-color: #333;
+  padding: 10px 20px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+nav div {
+  margin: 0 10px;
+}
+
+nav a {
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+nav a:hover {
+  background-color: #555;
+  color: #ddd;
+}
+
+nav a.active {
+  background-color: #007bff;
+  color: white;
+}

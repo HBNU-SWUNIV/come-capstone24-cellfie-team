@@ -1,0 +1,41 @@
+.textBody {
+  background-color: #f4f4f4; /* 배경색 */
+  border: 1px solid #ddd; /* 테두리 */
+  border-radius: 8px; /* 테두리 둥글게 */
+  padding: 20px; /* 내부 여백 */
+  margin: 10px 0; /* 위아래 마진 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+  margin-left: 60px;
+  margin-top: 95px;
+  height: 380px;
+  width: 450px;
+}
+
+.textBody p {
+  font-size: 33px; /* 글꼴 크기 */
+  color: #333; /* 글꼴 색상 */
+  margin: 5px 0; /* 각 문단의 마진 */
+  line-height: 1.5; /* 줄간격 */
+}
+
+.textBody p:first-of-type {
+  font-weight: bold; /* 첫 문단(시각)은 볼드체 */
+  color: #007bff; /* 첫 문단 색상 */
+}
+
+.textBody p:last-of-type {
+  font-weight: bold;
+  color: red;
+}
+
+.textBodyOverview p {
+  font-size: 33px; /* 글꼴 크기 */
+  color: #333; /* 글꼴 색상 */
+  margin: 5px 0; /* 각 문단의 마진 */
+  line-height: 1.5; /* 줄간격 */
+}
+
+.textBodyOverview p:first-of-type {
+  font-weight: bold; /* 첫 문단(시각)은 볼드체 */
+  color: #007bff; /* 첫 문단 색상 */
+}
