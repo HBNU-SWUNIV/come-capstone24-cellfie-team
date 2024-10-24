@@ -27,9 +27,9 @@
 ## System Design
 
 ### System Requirements
-<div align="center">
+<p align="center">
   ![image](https://github.com/user-attachments/assets/a537b0fa-a13d-4da4-8447-70e6c9bc7f70)
-</div>
+</p>
 
 1. **백엔드 서버**는 Spring Boot로 구성되어 있으며, 1분마다 외부 API를 통해 기상 정보와 양식장 센서 데이터를 가져옵니다. 양식장에서는 수온, 용존산소, 염도, pH 정보를 수집하고, 바다누리 API를 통해 바다의 수온, 풍향, 풍속, 염도, 기온, 기압, 조위 정보를 수집한다.
    
@@ -40,8 +40,8 @@
 4. **프론트엔드**는 예측된 용존산소량, 현재 용존산소량, 수온 등의 데이터를 받아, 그래프 등으로 유저에게 시각화하여 보여준다.
 
 
-<div align="center">![image](https://github.com/user-attachments/assets/bfaf4bd1-d2e1-4f18-8490-e9cd34c04f24)</div>
-<div align="center">![image](https://github.com/user-attachments/assets/44e085eb-20b0-4918-a736-796541cfef37)</div>
+<p align="center">![image](https://github.com/user-attachments/assets/bfaf4bd1-d2e1-4f18-8490-e9cd34c04f24)</p>
+<p align="center">![image](https://github.com/user-attachments/assets/44e085eb-20b0-4918-a736-796541cfef37)</p>
 
 - **액터:** 사용자
 - **목표:** 양식장의 데이터를 차트와 텍스트 형태로 확인하고, 데이터에 대해 더 깊이 있는 정보를 얻기 위해 상호작용한다.
