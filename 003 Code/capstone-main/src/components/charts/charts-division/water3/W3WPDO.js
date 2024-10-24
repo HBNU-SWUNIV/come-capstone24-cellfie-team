@@ -10,7 +10,7 @@ const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
 Chart.register(...registerables);
 
-const DataChart1 = () => {
+const W3WPDO = () => {
   const [chartData, setChartData] = useState({ datasets: [] });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -20,42 +20,22 @@ const DataChart1 = () => {
     setLoading(true);
     setError(null);
     try {
-      const response_data = await axios.get(
-        `${API_BASE_URL}/water?tankid=${tankId}`
-      );
-      const dataPoints = response_data.data; // API로부터 데이터 받기
-      console.log(dataPoints);
-
       const response_pred = await axios.get(
-        `${API_BASE_URL}/pdo?tankid=${tankId}`
+        `${API_BASE_URL}/pdoweek?tankid=${tankId}`
       );
-      const dataPointPred = response_pred.data;
+      const dataPointPred = formatPredictionData(response_pred.data);
 
       // 데이터 포맷팅
-      const formattedDataSets = formatDataSets(dataPoints);
-      const formattedPredData = formatPredictionData(dataPointPred);
-
-      const formattedAllData = [...formattedDataSets, formattedPredData];
 
       setChartData({
-        datasets: formattedAllData.map((dataset, index) => ({
-          label: ["수온", "염도", "pH농도", "용존산소", "용존산소 예측값"][
-            index
-          ],
-          data: dataset,
-          backgroundColor: [
-            "#0CD3FF",
-            "#A9A6A7",
-            "#FFCA29",
-            "#FF8C00",
-            "#FF0000",
-          ][index],
-          borderColor: ["#0CD3FF", "#A9A6A7", "#FFCA29", "#FF8C00", "#FF0000"][
-            index
-          ],
-          pointRadius: 1.5,
-          borderWidth: 1,
-        })),
+        datasets: [
+          {
+            label: "용존산소 예측값",
+            data: dataPointPred, // 두 번째 데이터셋
+            backgroundColor: "#FF0000",
+            borderColor: "#FF0000",
+          },
+        ],
       });
     } catch (error) {
       setError("데이터를 불러오는 데 실패했습니다.");
@@ -65,7 +45,7 @@ const DataChart1 = () => {
   };
 
   useEffect(() => {
-    fetchChartData("iw1");
+    fetchChartData("rt2");
     const chart = chartRef.current;
     return () => {
       chart?.destroy();
@@ -89,41 +69,13 @@ const DataChart1 = () => {
       ) : error ? (
         <p>{error}</p>
       ) : (
-        <Line data={chartData} options={options} height={300} width={400} />
+        <Line data={chartData} options={options} height={200} width={400} />
       )}
     </div>
   );
 };
 
-export default DataChart1;
-
-function formatDataSets(dataPoints) {
-  // 필터링하여 30분 간격의 데이터만 추출
-  const filteredDataPoints = dataPoints.filter((dp) => {
-    const date = parseDate(dp.time);
-    return date.getMinutes() === 30 || date.getMinutes() === 0;
-  });
-
-  const temperatures = filteredDataPoints.map((dp) => ({
-    x: parseDate(dp.time),
-    y: dp.wt,
-  }));
-  const salinities = filteredDataPoints.map((dp) => ({
-    x: parseDate(dp.time),
-    y: dp.sa,
-  }));
-  const pHLevels = filteredDataPoints.map((dp) => ({
-    x: parseDate(dp.time),
-    y: dp.ph,
-  }));
-
-  const dissolvedOxygen = filteredDataPoints.map((dp) => ({
-    x: parseDate(dp.time),
-    y: dp.wdo,
-  }));
-
-  return [temperatures, salinities, pHLevels, dissolvedOxygen];
-}
+export default W3WPDO;
 
 function formatPredictionData(predictionData) {
   // 예측 데이터 포맷팅
@@ -133,7 +85,7 @@ function formatPredictionData(predictionData) {
   });
   const predDO = filteredDataPoints.map((pred) => ({
     x: parseDate(pred.time),
-    y: pred.pdo,
+    y: pred.pdoweek,
   }));
 
   return predDO;
@@ -161,12 +113,10 @@ const options = {
       },
       type: "time",
       time: {
-        unit: "hour", // 'minute' 대신 'hour' 사용
-        stepSize: 1, // 30분 간격
-        tooltipFormat: "HH:mm",
+        unit: "day",
+        tooltipFormat: "MMM dd",
         displayFormats: {
-          hour: "HH:mm", // 시간 표시 형식
-          minute: "HH:mm", // 시간이 정시가 아닐 때 표시 형식
+          day: "MMM dd",
         },
       },
       adapters: {
@@ -174,12 +124,9 @@ const options = {
           locale: ko,
         },
       },
-      min: new Date().setHours(new Date().getHours() - 12),
-      max: new Date().setHours(new Date().getHours() + 3),
+      max: new Date().setDate(new Date().getDate() + 8),
     },
-    y: {
-      beginAtZero: false,
-    },
+    y: {},
   },
   plugins: {
     legend: {

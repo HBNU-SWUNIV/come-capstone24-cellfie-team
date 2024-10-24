@@ -5,14 +5,14 @@
   padding: 20px; /* 내부 여백 */
   margin: 10px 0; /* 위아래 마진 */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
-  margin-left: 60px;
-  margin-top: 95px;
-  height: 380px;
-  width: 450px;
+  margin-left: 142px;
+  margin-top: 312px;
+  height: 239px;
+  width: 490px;
 }
 
 .textBody p {
-  font-size: 33px; /* 글꼴 크기 */
+  font-size: 20px; /* 글꼴 크기 */
   color: #333; /* 글꼴 색상 */
   margin: 5px 0; /* 각 문단의 마진 */
   line-height: 1.5; /* 줄간격 */

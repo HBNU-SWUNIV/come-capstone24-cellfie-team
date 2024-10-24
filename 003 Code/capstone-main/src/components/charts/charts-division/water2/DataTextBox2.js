@@ -17,7 +17,7 @@ const DataTextBox2 = () => {
     setError(null);
     try {
       const response_data = await axios.get(
-        `${API_BASE_URL}/waterone?tankid=${tankId}`
+        `${API_BASE_URL}/wateronewithos?tankid=${tankId}`
       );
       const response_data_pred = await axios.get(
         `${API_BASE_URL}/pdo?tankid=${tankId}`
@@ -57,6 +57,7 @@ const DataTextBox2 = () => {
           <p>pH농도: {dataPoints[0].ph}</p>
           <p>염도: {dataPoints[0].sa} psu</p>
           <p>용존산소량: {dataPoints[0].wdo} ㎎/L</p>
+          <p>산소포화도: {dataPoints[0].os} %</p>
           <p>용존산소량 예측값(30분 뒤): {dataPoints[1].pdo} ㎎/L</p>
         </div>
       ) : (

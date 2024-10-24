@@ -7,6 +7,7 @@ import Button from "../components/Button";
 import DataTextBox3 from "../components/charts/charts-division/water3/DataTextBox3";
 
 import "../styles/chart/Water1.css";
+import W3WPDO from "../components/charts/charts-division/water3/W3WPDO";
 
 class Water3 extends React.Component {
   render() {
@@ -20,6 +21,10 @@ class Water3 extends React.Component {
           <div className="dataChart">
             <div className="dataName">용존산소</div>
             <W3DO />
+          </div>
+          <div className="dataChart">
+            <div className="dataName">용존산소</div>
+            <W3WPDO />
           </div>
           <div className="dataChart">
             <div className="dataName">pH농도</div>

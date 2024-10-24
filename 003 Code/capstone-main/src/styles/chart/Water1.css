@@ -3,7 +3,7 @@
   width: 500px;
   position: relative;
 }
-.dataBox{
+.dataBox {
   flex-direction: row;
   position: absolute;
 }
@@ -13,9 +13,8 @@
   justify-content: flex-end; /* 차트를 오른쪽 끝으로 정렬 */
   position: relative;
   margin-left: auto;
-  margin-right: 50px; /* 오른쪽 여백 */
+  margin-right: 130px; /* 오른쪽 여백 */
   width: fit-content;
-
 }
 
 .dataChart {
@@ -24,7 +23,7 @@
   padding: 15px; /* 내부 패딩 */
   margin: 10px; /* 주변 마진 */
   border-radius: 8px; /* 모서리 둥글게 */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 그림자 효과 */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
   transition: transform 0.3s ease; /* 부드러운 변형 효과 */
   width: 500px;
   height: 250px;
@@ -32,10 +31,10 @@
 
 .dataChart:hover {
   transform: scale(1.05); /* 호버 시 차트 확대 */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* 호버 시 그림자 강조 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 호버 시 그림자 강조 */
 }
 
-.dataName{
+.dataName {
   display: flex;
   justify-content: center;
   font-weight: bold;
