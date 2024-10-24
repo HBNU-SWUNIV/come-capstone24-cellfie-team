@@ -29,7 +29,7 @@
 ### System Requirements
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/a537b0fa-a13d-4da4-8447-70e6c9bc7f70" alt="image" width="500"/>
+  <img src="https://github.com/user-attachments/assets/a537b0fa-a13d-4da4-8447-70e6c9bc7f70" alt="image" width="900"/>
 </p>
 
 
@@ -41,12 +41,12 @@
    
 4. **프론트엔드**는 예측된 용존산소량, 현재 용존산소량, 수온 등의 데이터를 받아, 그래프 등으로 유저에게 시각화하여 보여준다.
 
-
-
-  ![image](https://github.com/user-attachments/assets/bfaf4bd1-d2e1-4f18-8490-e9cd34c04f24)
-
-  ![image](https://github.com/user-attachments/assets/44e085eb-20b0-4918-a736-796541cfef37)
-
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/bfaf4bd1-d2e1-4f18-8490-e9cd34c04f24", alt="image", width="1500"/>
+</p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/44e085eb-20b0-4918-a736-796541cfef37", alt="image", width="1500"/>
+</p>
 
 - **액터:** 사용자
 - **목표:** 양식장의 데이터를 차트와 텍스트 형태로 확인하고, 데이터에 대해 더 깊이 있는 정보를 얻기 위해 상호작용한다.
