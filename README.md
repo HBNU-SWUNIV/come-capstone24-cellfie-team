@@ -28,7 +28,9 @@
 
 ### System Requirements
 
-  ![image](https://github.com/user-attachments/assets/a537b0fa-a13d-4da4-8447-70e6c9bc7f70)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a537b0fa-a13d-4da4-8447-70e6c9bc7f70" alt="image" width="500"/>
+</p>
 
 
 1. **백엔드 서버**는 Spring Boot로 구성되어 있으며, 1분마다 외부 API를 통해 기상 정보와 양식장 센서 데이터를 가져옵니다. 양식장에서는 수온, 용존산소, 염도, pH 정보를 수집하고, 바다누리 API를 통해 바다의 수온, 풍향, 풍속, 염도, 기온, 기압, 조위 정보를 수집한다.
